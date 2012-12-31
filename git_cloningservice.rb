@@ -9,7 +9,7 @@
 # === repositories
 # An array of the git repository names that you need access to
 # === github
-# The github git location of startsiden repositories
+# The git location of your repositories
 # Author: Johan Sydseter (mailto:johan.sydseter@startsiden.no)
 
 require 'yaml'
