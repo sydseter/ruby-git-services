@@ -7,16 +7,16 @@
 # An array of all the names of the repositories that you need to clone
 # Example:
 #   repositories:
-#     - 'abcnyheter-core'
-#     - 'php-testlib'
+#     - 'vm-utils'
+#     - 'ruby-git-services'
 # to your [git-src] directory
 # === github
 # The git url to repositories on github
-# This is mot probably: git@github:startsiden
+# This can be: git@github:sydseter
 # Author:: Johan Sydseter (mailto:johan.sydseter@startsiden.no)
 ---
 vagrant:
-  src: '/home/user/src/startsiden'
-  github:   'git@github.com:startsiden'
+  src: '/home/user/src/sydseter'
+  github:   'git@github.com:sydseter'
   repositories:
     - ''
