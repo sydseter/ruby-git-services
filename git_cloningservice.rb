@@ -41,7 +41,6 @@ module Git
         raise "Could not parse yaml from #{config_file}"
 
       src = vagrant_yaml['vagrant']['src']
-      src = src.sub(/(\/)+$/,'')
 
       if !File.directory? src
         $stderr.puts "#{src} is not a directory or does not exist.\n" +
