@@ -24,20 +24,23 @@ module Git
       config_file = "#{dir}/#{prefix}.local.yml"
 
       if !File.exists? config_file
-        $stderr.puts "#{config_file} does not exist.\n\
-          This file is where you configure vagrant to clone github \
-          repositories that you want to set up as shared folders.\n\
-          Create it by:\n\
-          cp #{dir}/#{prefix}.yml #{config_file}\n\
-          Please edit this file and specify a source folder and github url \
-          for your git repositories.\n"
+        $stderr.puts "#{config_file} does not exist.
+This file is where you configure vagrant to clone github \
+repositories that you want to set up as shared folders.
+Create it by:
+
+cp #{dir}/#{prefix}.yml #{config_file}
+
+Please edit this file and specify a source folder and github url \
+for your git repositories.\n"
           exit
       end
 
       if !File.readable? config_file
-        $stderr.puts "#{config_file} is not readable.\n\
-          Make sure your user has access to it by doing:\n\
-          chmod 775 #{config_file}"
+        $stderr.puts "#{config_file} is not readable.
+Make sure your user has access to it:
+
+chmod 775 #{config_file}\n"
           exit
       end
 
@@ -47,13 +50,17 @@ module Git
       src = vagrant_yaml['vagrant']['src']
 
       if !File.directory? src
-        $stderr.puts "#{src} is not a directory or does not exist.\n\
-          This directory is where all the repositories will be \
-          cloned out from github.\
-          makes sure this directory exist by creating it with:\n\
-          mkdir -p #{src}.\n\
-          You may want to edit #{config_file} instead and specify \
-          another directory.\n"
+        $stderr.puts "#{src} is not a directory or does not exist.
+This directory is where all the repositories will be \
+cloned out from github. Makes sure this directory exist by creating it with:
+
+mkdir -p #{src}.
+
+You may want to edit the file: 
+
+#{config_file}
+
+If so, specify another directory.\n"
           exit
       end
 
