@@ -9,7 +9,7 @@
 # === repositories
 # An array of the git repository names that you need access to
 # === github
-# The github git location of startsiden repositories
+# The git location of your repositories
 # Author: Johan Sydseter (mailto:johan.sydseter@startsiden.no)
 
 require 'yaml'
@@ -41,7 +41,6 @@ module Git
         raise "Could not parse yaml from #{config_file}"
 
       src = vagrant_yaml['vagrant']['src']
-      src = src.sub(/(\/)+$/,'')
 
       if !File.directory? src
         $stderr.puts "#{src} is not a directory or does not exist.\n" +
