@@ -26,7 +26,7 @@ module Git
       if !File.exists? config_file
         $stderr.puts "#{config_file} does not exist.\n" +
           "Create it by:\n" +
-          "cp ./etc/#{prefix}.yml #{config_file}"
+          "cp #{dir}/#{prefix}.yml #{config_file}"
           exit
       end
 
