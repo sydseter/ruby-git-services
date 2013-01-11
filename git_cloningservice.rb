@@ -24,16 +24,16 @@ module Git
       config_file = "#{dir}/#{prefix}.local.yml"
 
       if !File.exists? config_file
-        $stderr.puts "#{config_file} does not exist.
+        $stderr.puts "#{config_file} did not exist.
 This file is where you configure vagrant to clone github \
 repositories that you want to set up as shared folders.
-Create it by:
+The git cloning service created it by:
 
 cp #{dir}/#{prefix}.yml #{config_file}
 
 Please edit this file and specify a source folder and github url \
 for your git repositories.\n"
-          exit
+          %x(cp #{dir}/#{prefix}.yml #{config_file});
       end
 
       if !File.readable? config_file
